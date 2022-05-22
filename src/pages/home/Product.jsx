@@ -1,18 +1,19 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, IconButton, Typography } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import { Box, Button, Card, CardMedia,Typography } from '@mui/material'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { popularproducts } from '../../components/data'
 import { Navbar } from '../../components'
-import { ShoppingCart, Star } from '@material-ui/icons'
-import { bgcolor, styled } from '@mui/system'
+import { Star } from '@material-ui/icons'
+import { styled } from '@mui/system'
 import Footer from '../../components/Footer'
-import { Colors } from "../../styles/theme/index";
+import { Cart } from '../../Context'
 
 export const styledlist = styled(Box)
 
 const Product = () => {
     const [item,SetItem] = useState(popularproducts)
     const {id} = useParams();
+     const {cart,setCart} = useContext(Cart);
 
     useEffect(() => {
       let item = popularproducts.find(item=>item.id===parseInt(id))
@@ -66,9 +67,27 @@ const Product = () => {
                            20
                         </Typography>
                         </Box>
-                        <Button variant='contained' sx={{ marginTop: "10px" }}>
-                            Add Item {item.price}
-                        </Button>
+                         {cart.includes(item)?(
+                            <Button 
+                            onClick={()=>{
+                               setCart(cart.filter((c)=>c.id!==item.id));
+                            }} 
+                            variant='contained' 
+                            sx={{ marginTop: "10px" }}
+                            >
+                            Remove Item
+                            </Button>
+                            ):  
+                          (     
+                                <Button
+                                 onClick={()=>{
+                                 setCart([...cart,item]);
+                              }} 
+                             variant='contained' 
+                             sx={{ marginTop: "10px" }}>
+                             Add Item {item.price}
+                             </Button>
+                              )} 
                         <Button variant='outlined' sx={{ marginTop: "10px" }}>
                             Add to favourite
                         </Button>

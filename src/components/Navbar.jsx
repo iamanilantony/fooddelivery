@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext, useState} from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
@@ -13,6 +14,8 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Colors } from "../styles/theme/index";
 import { Favorite } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
+import { Badge } from '@mui/material';
+import { Cart } from '../Context';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,8 +59,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
 export default function Navbar() {
+    const {cart} = useContext(Cart);
+    const [count,setCount] = useState(0)
+
+    const Counter = ()=>{
+        setCount(cart.length)
+    }
+
+    React.useEffect(() => {
+      Counter()
+
+    }, [cart])
   return (
+      
     <Box sx={{ 
             // display: "flex",
             // justifyContent: "center",
@@ -114,7 +130,7 @@ export default function Navbar() {
             sx={{ display: "flex", alignItems: "center"}}>
 
           <Button variant="contained" color='error' sx={{marginRight:2, display:{xs:"none",sm:"flex"}} } startIcon={<Favorite />}>Favourites</Button> 
-          <Button variant="contained" color='error'  startIcon={<ShoppingCartOutlinedIcon />}>Cart</Button>
+          <Button variant="contained" color='error'  startIcon={<Badge badgeContent={count}><ShoppingCartOutlinedIcon/></Badge>}>Cart</Button>
           
           </Box>
         </Toolbar>
