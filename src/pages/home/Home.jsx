@@ -1,5 +1,6 @@
 import React from 'react'
 import { Header, List, Navbar } from '../../components'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
         <Navbar />
         <Header />
         <List />
+        <Footer />
         </>
     </div>
   )

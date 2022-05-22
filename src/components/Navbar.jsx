@@ -12,6 +12,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Colors } from "../styles/theme/index";
 import { Favorite } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -82,14 +83,16 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
+          <Link to="/" style={{ textDecoration: "none", color:"white"}}>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ fontWeight:'600',fontSize:"30px", flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
-          >
+            >
             yummy.
           </Typography>
+          </Link>
           </Box>
       
           <Search  

@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import {  Grid, Typography } from '@mui/material'
 import React from 'react'
 import { popularrestaurants } from './data'
 import RowItem from './RowItem'
@@ -7,7 +7,7 @@ const RightItem = () => {
   return (
       <>
      
-    <Grid container sx={{ flex: "1", bgcolor:"gray" }} p={5}>
+    <Grid container sx={{ flex: "1", bgcolor:"gray", display:{xs:"none",sm:"block"} }} p={5}>
     <Typography variant='h4' align='center' p={2}>
           Popular Restaurants
       </Typography>
