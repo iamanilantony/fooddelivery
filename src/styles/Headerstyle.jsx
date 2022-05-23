@@ -6,15 +6,15 @@ const theme = createTheme();
 
 export const BannerContainer = styled(Box)(({ matches, theme }) => ({
     display: 'flex', 
-    marginTop: '-240px',
+    marginTop: '240px',
     width: "100%",
     position: 'relative',
-    background: Colors.imgcolor,
+    background: Colors.black,
 }))
 
 export const BannerImg = styled("img")(( src, theme)=> ({
     width: "100%",
-    height: "65vh",
+    height: "50vh",
     objectFit: "cover",
   
 }))

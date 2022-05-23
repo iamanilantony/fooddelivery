@@ -36,32 +36,32 @@ const Product = () => {
                     <Typography variant='body1' fontWeight={400}>
                     {item.address}
                     </Typography>
-                    <Box bgcolor={"green"} color={'white'} width={"50px"} display={"flex"} alignItems={"center"} p={1}>
-                    <Typography variant='h6' fontWeight={400} mr={1} fontSize={"16px"}>
+                    <Box bgcolor={"green"} color={'white'} width={"50px"} display={"flex"} alignItems={"center"} p={1} sx={{borderRadius:"10px"}}>
+                    <Typography variant='h6' fontWeight={400} mr={1} fontSize={"16px"} >
                     4.2
                     </Typography> <Star />
                     </Box>
                 </Box> 
                 
-            <Box sx={{bgcolor: "pink", display:"flex", justifyContent:"space-between", flexDirection:{xs:'column', sm:'row'}  }}>
-               <Card m={4} sx={{width:{xs:"100%",sm:"60%"}, flex:'3'}} >
+            <Box sx={{bgcolor: "pink", display:"flex", justifyContent:"space-between", flexDirection:{xs:'column', sm:'row', borderRadius:'20px'} }} ml={2} mr={4}> 
+               <Card ml={4} sx={{width:{xs:"100%",sm:"60%"}, flex:'3'}} >
                    <CardMedia
                      component="img"
                      height="594"
                      objectfit="contain"               
                      image={item.img}
                      alt="foodImage"
-                     sx={{marginLeft: "20px"}}
+                     sx={{marginLeft: "0px"}}
                      />
                </Card>
-                    <Box  flex={1} display="flex" flexDirection="column" alignItems={{xs:"left",sm:"left"}}   paddingRight="5%" paddingLeft={{xs:"10%",sm:"1%"}} marginRight={10}  Width={"100%"}>
+                    <Box  flex={1} display="flex" flexDirection="column" alignItems={"left"}  paddingRight="5%" paddingLeft={{xs:"10%",sm:"1%"}} marginRight={10}  Width={"100%"} paddingBottom={5}>
                         <Typography variant='h3' fontWeight={500} p={1}> 
                             {item.title} 
                         </Typography>
                         <Typography variant='h6' fontWeight={200} p={1}> 
                             {item.desciption} 
                         </Typography>
-                        <Box display={"flex"} alignItems={"center"} color={"gold"} bgcolor={"#ff050586"} width={"180px"} borderRadius={"5px"} p={0.2} >
+                        <Box display={"flex"} alignItems={"center"} color={"gold"} bgcolor={"#ff050586"} width={"150px"} sx={{borderRadius:"10px"}} p={0.3} >
                         <Star /><Star /><Star /><Star /><Star />
                         <Typography variant='h6' fontWeight={400} pl={0.5} color={"gray"}> 
                            20
@@ -73,7 +73,7 @@ const Product = () => {
                                setCart(cart.filter((c)=>c.id!==item.id));
                             }} 
                             variant='contained' 
-                            sx={{ marginTop: "10px" }}
+                            sx={{ marginTop: "10px", height:"60px"}}
                             >
                             Remove Item
                             </Button>
@@ -84,11 +84,11 @@ const Product = () => {
                                  setCart([...cart,item]);
                               }} 
                              variant='contained' 
-                             sx={{ marginTop: "10px" }}>
+                             sx={{ marginTop: "20px", height:"60px" }}>
                              Add Item {item.price}
                              </Button>
                               )} 
-                        <Button variant='outlined' sx={{ marginTop: "10px" }}>
+                        <Button variant='outlined' sx={{ marginTop: "10px",  height:"60px" }}>
                             Add to favourite
                         </Button>
                          

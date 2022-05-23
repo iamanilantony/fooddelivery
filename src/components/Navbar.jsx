@@ -12,7 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Colors } from "../styles/theme/index";
-import { Favorite } from '@material-ui/icons';
+import { Favorite, Person } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { Badge } from '@mui/material';
 import { Cart } from '../Context';
@@ -82,7 +82,8 @@ export default function Navbar() {
             flexGrow: 1 , 
             margin: 0 ,
             height: 300,
-            zIndex: 10}}>
+            zIndex: 15,
+      }}>
       <AppBar position="static" 
         // sx= {{}}
         style={{color:Colors.white ,  background: Colors.danger , borderRadius: '0px' ,width: "100%", alignSelf: "center"}}>
@@ -95,7 +96,7 @@ export default function Navbar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"        
-            sx={{ mr: 2 }}
+            sx={{ mr: 2 , display: { xs: 'none', sm: 'block' }}}
           >
             <MenuIcon />
           </IconButton>
@@ -104,7 +105,7 @@ export default function Navbar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ fontWeight:'600',fontSize:"30px", flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
+            sx={{ fontWeight:'600',fontSize:"30px", flexGrow: 1, }}
             >
             yummy.
           </Typography>
@@ -112,7 +113,7 @@ export default function Navbar() {
           </Box>
       
           <Search  
-            style={{ width: "50%", color: Colors.white , border: "1px Solid white" , borderRadius: '20px' }}
+            style={{ width: "50%", color: Colors.white , border: "1px Solid white" , borderRadius: '20px',}} sx={{display: { xs: 'none', sm: 'block' } }}
             >
             <SearchIconWrapper>
               <SearchIcon />
@@ -128,7 +129,9 @@ export default function Navbar() {
          
           <Box
             sx={{ display: "flex", alignItems: "center"}}>
-
+          <Link to="/signin" style={{ textDecoration:"none" }}>
+          <Button variant='outlined' startIcon={<Person />} sx={{ margin: "10px", display:{xs:"none",sm:"flex"}}}>SignIn</Button>
+          </Link>
           <Button variant="contained" color='error' sx={{marginRight:2, display:{xs:"none",sm:"flex"}} } startIcon={<Favorite />}>Favourites</Button> 
           <Button variant="contained" color='error'  startIcon={<Badge badgeContent={count}><ShoppingCartOutlinedIcon/></Badge>}>Cart</Button>
           

@@ -6,7 +6,7 @@ import { popularproducts } from './data'
 // const I = [11,12,13,14,15,16,17,18,19];
 const LeftItem = () => {
   return (
-    <Box sx={{ flex: "5", bgcolor:"#ffffff", width:{xs:"100px",sm:"1200px"},padding:{xs:2,sm:10}}} p={0}>
+    <Box sx={{ flex: "5", bgcolor:"#ffffff", width:{xs:"100px",sm:"1200px"},padding:{xs:0,sm:10}}}>
         <Typography variant='h4' align='center' mb={5} fontWeight={500} mt={5}>
           Popular Choices
       </Typography>
