@@ -7,7 +7,7 @@ const RightItem = () => {
   return (
       <>
      
-    <Grid container sx={{ flex: "1", bgcolor:"gray", display:{xs:"none",sm:"block"} }} p={5}>
+    <Grid container sx={{ flex: "1", bgcolor:"#fa774f", display:{xs:"none",sm:"block"} }} p={5}>
     <Typography variant='h4' align='center' p={2}>
           Popular Restaurants
       </Typography>
