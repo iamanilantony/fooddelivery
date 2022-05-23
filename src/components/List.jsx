@@ -9,7 +9,7 @@ const List = () => {
   return (
       <>    
          
-           <Stack direction="row" justifyContent="space-between">
+           <Stack direction="row" justifyContent="space-between" sx={{mb:"-80px"}}>
             <LeftItem />
             <RightItem />
             </Stack>

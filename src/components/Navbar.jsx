@@ -105,7 +105,7 @@ export default function Navbar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ fontWeight:'600',fontSize:"30px", flexGrow: 1, }}
+            sx={{ fontWeight:'600',fontSize:"30px", flexGrow: 1, mb:"8px"}}
             >
             yummy.
           </Typography>
