@@ -3,6 +3,7 @@ import { Box } from '@mui/system'
 import { useFormik } from 'formik'
 import * as yup from 'yup'; 
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const validationSchema = yup.object({
     firstName: yup
@@ -63,7 +64,7 @@ const SignUp = () => {
             padding={"30px"}
             sx={{width:{xs:"65%",sm:"33%"}}}
             // width={"50%"}
-            height={"60vh"}
+            height={"70vh"}
             bgcolor={"pink"}
             borderRadius={"10px"}
             >
@@ -133,6 +134,12 @@ const SignUp = () => {
                             />
 
                             <Button type="submit" color="primary" variant="contained" fullWidth>Submit</Button>
+                            
+                            <Link to='/fullform' style={{textDecoration: "none" , color:"black"}}>
+                            <Typography variant="body1" sx={{mb:"5px" , mt:"15px"}} >
+                                    Register Form
+                           </Typography>
+                            </Link>
 
                 </form>
                             </Box>
